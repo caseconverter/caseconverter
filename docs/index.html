@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lower Case, Upper Case, Title Case and Sentence Case Converter Tool</title>
+<meta name="description" content="Case Converter is a free online tool to convert a text to lowercase, uppercase, title case, capital case, or sentence case">
+<style>
+html {
+background-color: #FFFFFF;
+font-family: sans-serif;
+font-size: 130%;
+color: #000000;
+}
+body {
+max-width: 40em;
+margin-left: auto;
+margin-right: auto;
+}
+h1 {
+text-align: center;
+font-size: 160%;
+}
+form.convertcase textarea {
+width: 95%;
+height: 300px;
+font-size: 110%;
+font-weight: bold;
+}
+form.convertcase button{
+margin-top: 5px;
+font-size: 110%;
+margin-right: 10px;
+}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20572145-4"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-20572145-4');
+</script>
+<script data-ad-client="ca-pub-0113441673686829" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+<div class="maincontainer">
+
+<div id="contentwrapper">
+<div id="middlecolumn">
+
+<h1>Lower Case, Upper Case, Title Case and Sentence Case Converter Tool</h1>
+
+<p><strong>Description:</strong> Case Converter is a free online tool to easily convert text to lowercase, uppercase, title case, capital case or sentence case.</p>
+<p>
+<form class="convertcase">
+<textarea id="stringbox"></textarea>
+<br>
+<button onClick="return convertstring(stringbox, 'sentencecase')" title="Make everything lowercase except the first character and 'I'">To sentence case</button>
+<button onClick="return convertstring(stringbox, 'titlecase')" title="Capitalize the first character of each word, omitting common stop words like 'and', 'at' etc">To <span style="color:red">t</span>he Title Case</button>
+<button onClick="return convertstring(stringbox, 'capitalcase')" title="Capitalize the first character of each word">To <span style="color:red">T</span>he Capital Case</button> 
+<button onClick="return convertstring(stringbox, 'lowercase')" title="Lower Case everything inside the string.">to lower case</button> 
+<button onClick="return convertstring(stringbox, 'uppercase')" title="Upper Case everything inside the string.">TO UPPER CASE</button>
+<!-- <button onClick="return fieldtoclipboard.copyfield(event, stringbox)">Copy To Clipboard</button> -->
+</form>
+
+<p><b>Word Count:</b> <span id="wordcount"></span><br>
+<b>Character Count:</b> <span id="charcount"></span></p>
+
+<script>
+
+// LowerCase, Title And Sentence Case Converter Tool
+
+var stringbox = document.getElementById('stringbox')
+var wordcountspan = document.getElementById('wordcount')
+var charcountspan = document.getElementById('charcount')
+
+function convertstring(textarea, action){
+	if (action == 'sentencecase'){
+		textarea.value = sentenceCase(textarea.value)
+	}
+	else if (action == 'titlecase'){
+		textarea.value = toTitleCase(textarea.value)
+	}
+	else if (action == 'capitalcase'){
+		textarea.value = CapitalCase(textarea.value)
+	}
+	else if (action == 'lowercase'){
+		textarea.value = lowerCase(textarea.value)
+	}
+	else if (action == 'uppercase'){
+		textarea.value = upperCase(textarea.value)
+	}
+	return false
+}
+
+function sentenceCase(str){
+	var str = str.toLowerCase().replace(/\si\s/g, ' I ');
+	str = str.charAt(0).toUpperCase() + str.slice(1);
+	return str
+}
+
+//reference: https://github.com/gouch/to-title-case
+function toTitleCase(str){
+  var smallWords = /^(a|an|and|as|at|but|by|en|for|if|in|nor|of|on|or|per|the|to|vs?\.?|via)$/i;
+	var str = str.toLowerCase()
+  return str.replace(/[A-Za-z0-9\u00C0-\u00FF]+[^\s-]*/g, function(match, index, title){
+    if (index > 0 && index + match.length !== title.length &&
+      match.search(smallWords) > -1 && title.charAt(index - 2) !== ":" &&
+      (title.charAt(index + match.length) !== '-' || title.charAt(index - 1) === '-') &&
+      title.charAt(index - 1).search(/[^\s-]/) < 0) {
+      return match.toLowerCase();
+    }
+
+    if (match.substr(1).search(/[A-Z]|\../) > -1) {
+      return match;
+    }
+
+    return match.charAt(0).toUpperCase() + match.substr(1);
+  });
+};
+
+//reference: https://medium.freecodecamp.com/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27
+function CapitalCase(str){
+  return str.toLowerCase().split(' ').map(function(word) {
+    return (word.charAt(0).toUpperCase() + word.slice(1));
+  }).join(' ');
+}
+
+function lowerCase(str){
+  return str.toLowerCase();
+}
+
+function upperCase(str){
+  return str.toUpperCase();
+}
+
+function wordandcharcount(){
+	wordcountspan.innerHTML = stringbox.value.split(' ').length
+	charcountspan.innerHTML = stringbox.value.length
+}
+
+
+stringbox.addEventListener('input', function(){
+	wordandcharcount()
+}, false)
+
+wordandcharcount()
+</script>
+
+<p>Here is an explanation of all the different modes the tool 
+supports:</p>
+<ul>
+<li><b>Sentence Case:</b> Makes everything lowercase <b>except</b> the first character and &quot;I&quot;.</li>
+<li><b>Title Case:</b> Capitalize the first character of each word <b>except</b> common stop words like 'and', 'at' etc</li>
+<li><b>Capital Case:</b> Capitalize the first character of each word.</li>
+<li><b>Lower Case:</b> Lower Case everything inside the string.</li>
+<li><b>Upper Case:</b> Upper Case everything inside the string.</li>
+</ul>
+
+</div><!-- /div:middlecolumn -->
+</div><!-- /div:contentwrapper -->
+
+
+</div><!-- /div:maincontainer -->
+
+<p style="text-align:center;">Give a try to our <a href="https://passwordgenerator.top/" title="Strong Password Generator">Random Password Generator</a>.</p>
+
+<p style="font-size:80%;text-align:center;">Copyright &copy; 2018 <a href="https://caseconverter.cc/" title="convert case online">Case Converter</a> | <a href="https://caseconverter.cc/terms">Terms of Use</a> | <a href="https://caseconverter.cc/privacy">Privacy Policy</a> | <a href="https://caseconverter.cc/contact">Contact</a></p>
+
+</body>
+</html>
