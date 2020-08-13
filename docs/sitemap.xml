@@ -17,4 +17,9 @@
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
    </url>
+   <url>
+      <loc>https://passwordgenerator.top/contact</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.2</priority>
+   </url>
 </urlset> 
