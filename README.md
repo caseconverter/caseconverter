@@ -19,7 +19,13 @@ A JavaScript tool to convert text to lowercase, uppercase, title case, capital c
 [![LinkedIn][linkedin-shield]][linkedin-url]
 [![Twitter][twitter-shield]][twitter-url]
 
+## Requirements
 
+## Contributing
+
+## Live Version
+
+The sources of the latest production version can be found in the **/docs** directory. The live version is always available at [CaseConverter.cc](https://caseconverter.cc/).
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
