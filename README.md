@@ -45,7 +45,7 @@ The sources of the latest production version can be found in the **/docs** folde
 [license-shield]: https://img.shields.io/github/license/freewarelovers/CaseConverter
 [license-url]: https://github.com/freewarelovers/CaseConverter/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/company/freeware-lovers-gmbh/
+[linkedin-url]: https://www.linkedin.com/showcase/case-converter
 [facebook-shield]: https://img.shields.io/badge/-Facebook-black.svg?style=flat-square&logo=facebook&colorB=555
 [facebook-url]: https://www.facebook.com/CaseConverter
 [twitter-shield]: https://img.shields.io/twitter/follow/CaseConverterCC?label=Follow&style=social
