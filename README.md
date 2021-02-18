@@ -21,7 +21,7 @@ A JavaScript tool to convert text to lowercase, uppercase, title case, capital c
 
 ## Requirements
 
-The requirements for this project can be found in the [REQUIREMENTS.md] document.
+The requirements for this project can be found in the [REQUIREMENTS.md](/REQUIREMENTS.md) document.
 
 ## Contributing
 
