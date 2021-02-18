@@ -25,6 +25,10 @@ The requirements for this project can be found in the [REQUIREMENTS.md] document
 
 ## Contributing
 
+For now, if you want to submit your version of the code, please create an own folder with all the source files in the **/src** folder of this repository. Create a pull request and your code, after a brief review, will be merged to the repository.
+
+Please, don't change or send pull requests to the live verion of the site, which is located in the **/docs** folder.
+
 ## Live Version
 
 The sources of the latest production version can be found in the **/docs** directory. The live version is always available at [CaseConverter.cc](https://caseconverter.cc/).
