@@ -2,6 +2,8 @@
 
 ## Coding
 
+- Convert the current static version of the site to a static site generator, like e.g. [Jekyll](https://jekyllrb.com/)
+
 ## Design
 
 - We need a good icon for this project. The icon should also be used as a favicon.ico image.
