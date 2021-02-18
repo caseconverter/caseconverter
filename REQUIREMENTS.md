@@ -22,3 +22,9 @@
   - Spanish
   - Russian
   - ... (feel free to add further popular languages)
+
+### Applicability of Cases in Different Languages
+
+Language | lowercase | uppercase | title case | capital case | sentence case
+- | - | - | - | - | -
+English | ✔️  | ✔️  | ✔️  | ✔️  | ✔️
