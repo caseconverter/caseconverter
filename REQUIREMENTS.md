@@ -26,5 +26,5 @@
 ### Applicability of Cases in Different Languages
 
 Language | lowercase | uppercase | title case | capital case | sentence case
-- | - | - | - | - | -
+--- | --- | --- | --- | --- | ---
 English | ✔️  | ✔️  | ✔️  | ✔️  | ✔️
