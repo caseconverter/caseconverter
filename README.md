@@ -31,7 +31,7 @@ Please, don't change or send pull requests to the live verion of the site, which
 
 ## Live Version
 
-The sources of the latest production version can be found in the **/docs** directory. The live version is always available at [CaseConverter.cc](https://caseconverter.cc/).
+The sources of the latest production version can be found in the **/docs** folder. The live version is always available at [CaseConverter.cc](https://caseconverter.cc/).
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
