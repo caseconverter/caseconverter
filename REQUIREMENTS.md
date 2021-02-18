@@ -4,6 +4,7 @@
 
 - Convert the current static version of the site to a **static site generator** version, like e.g. [Jekyll](https://jekyllrb.com/)
 - Add the Open Graph meta tags at least to the frontpage of the site
+- Add a favicon.ico image
 
 ## Design
 
