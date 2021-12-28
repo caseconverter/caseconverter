@@ -1,0 +1,30 @@
+html {
+  background-color: #ffffff;
+  font-family: sans-serif;
+  font-size: 130%;
+  color: #000000;
+}
+
+body {
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 160%;
+}
+
+form.convertcase textarea {
+  width: 95%;
+  height: 260px;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+form.convertcase button {
+  margin-top: 5px;
+  font-size: 110%;
+  margin-right: 10px;
+}
