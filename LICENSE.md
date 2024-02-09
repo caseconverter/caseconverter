@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 Freeware Lovers
+Copyright (c) 2020 [Case Converter](https://caseconverter.cc/).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
