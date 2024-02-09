@@ -108,15 +108,25 @@ function upperCase(str){
 }
 
 function wordandcharcount(){
-	wordcountspan.innerHTML = stringbox.value.split(' ').length
-	charcountspan.innerHTML = stringbox.value.length
+    // Trim the string to remove whitespace from both ends, then check if it is empty
+    var trimmedString = stringbox.value.trim();
+    if (trimmedString.length === 0) {
+        wordcountspan.innerHTML = 0; // Set word count to 0 if the string is empty or only whitespace
+    } else {
+        // Split the trimmed string by spaces and filter out any empty strings caused by multiple spaces
+        var words = trimmedString.split(/\s+/).filter(function(word) {
+            return word.length > 0;
+        });
+        wordcountspan.innerHTML = words.length; // Update the word count based on the filtered words array
+    }
+    charcountspan.innerHTML = stringbox.value.length; // Character count is updated the same way as before
 }
 
 stringbox.addEventListener('input', function(){
-	wordandcharcount()
-}, false)
+    wordandcharcount(); // Call the updated function whenever there's input in the textarea
+}, false);
 
-wordandcharcount()
+wordandcharcount(); // Initial call to set the counts when the page loads
 </script>
 
 <p><strong>Description:</strong> Case Converter is a free online tool to easily convert text to lowercase, uppercase, title case, capital case or sentence case.</p>
@@ -146,8 +156,8 @@ supports:</p>
 
 </div><!-- /div:maincontainer -->
 
-<p style="font-size:80%;text-align:center;">Copyright &copy; 2018 <a href="https://caseconverter.cc/" title="convert case online">Case Converter</a> | <a href="https://caseconverter.cc/terms">Terms of Use</a> | <a href="https://caseconverter.cc/privacy">Privacy Policy</a> | <a href="https://caseconverter.cc/contact">Contact</a></p>
-<p style="font-size:80%;text-align:center;"><a href="https://www.facebook.com/CaseConverter" target="_blank" title="Case Converter at Facebook">Facebook</a> - <a href="https://twitter.com/CaseConverterCC" target="_blank" title="Case Converter at Twitter">Twitter</a> - <a href="https://www.youtube.com/channel/UC4b6b7asFxb9MMbTT2A1Y0w?sub_confirmation=1" target="_blank" title="Case Converter at YouTube">YouTube</a> - <a href="https://www.linkedin.com/showcase/case-converter" target="_blank" title="Case Converter at LinkedIn">LinkedIn</a> - <a href="https://github.com/freewarelovers/CaseConverter/" target="_blank" title="Case Converter at GitHub">GitHub</a></p>
+<p style="font-size:80%;text-align:center;">&copy; 2018 <a href="https://caseconverter.cc/" title="convert case online">Case Converter</a> | <a href="https://caseconverter.cc/terms">Terms of Use</a> | <a href="https://caseconverter.cc/privacy">Privacy Policy</a> | <a href="https://caseconverter.cc/contact">Contact</a></p>
+<p style="font-size:80%;text-align:center;"><a href="https://twitter.com/CaseConverterCC" target="_blank" title="Case Converter at Twitter">Twitter</a> - <a href="https://www.youtube.com/channel/UC4b6b7asFxb9MMbTT2A1Y0w?sub_confirmation=1" target="_blank" title="Case Converter at YouTube">YouTube</a> - <a href="https://www.linkedin.com/showcase/case-converter" target="_blank" title="Case Converter at LinkedIn">LinkedIn</a> - <a href="https://github.com/freewarelovers/CaseConverter/" target="_blank" title="Case Converter at GitHub">GitHub</a></p>
 
 </body>
 </html>
