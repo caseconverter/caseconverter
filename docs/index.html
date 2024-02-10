@@ -106,21 +106,21 @@ function toTitleCase(str){
 
 //reference: https://medium.freecodecamp.com/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27
 function CapitalCase(str) {
-    // Split the text into paragraphs to handle new lines correctly
-    var paragraphs = str.split(/\n+/);
+    // Split the text into paragraphs or lines, including empty lines to preserve multiple newlines
+    var lines = str.split('\n');
 
-    // Process each paragraph to capitalize the first letter of each word
-    var processedParagraphs = paragraphs.map(paragraph =>
-        // Splitting each paragraph into words, considering spaces
-        paragraph.split(' ').map(word =>
-            // Ensuring the word is not empty to avoid errors with empty strings
+    // Process each line to capitalize the first letter of each word
+    var processedLines = lines.map(line => 
+        // Splitting each line into words, considering spaces
+        line.split(' ').map(word =>
+            // Capitalizing the first letter of each word, if the word is not empty
             word ? word[0].toUpperCase() + word.slice(1).toLowerCase() : ''
-        // Joining words back into a paragraph
+        // Joining words back into a line
         ).join(' ')
     );
 
-    // Rejoining the processed paragraphs, preserving the original paragraph breaks
-    return processedParagraphs.join('\n');
+    // Rejoining the processed lines, preserving all original newline characters, including multiple consecutive newlines
+    return processedLines.join('\n');
 }
 
 function lowerCase(str){
