@@ -71,27 +71,29 @@ function convertstring(textarea, action){
 }
 
 function sentenceCase(str) {
-    // First, ensure uniform spacing by replacing multiple whitespace characters with a single space
-    // and trim spaces right before punctuation marks that might have been added by previous replacements
-    var uniformStr = str.replace(/\s+/g, ' ').replace(/\s+([.?!])/g, '$1');
+    // Split the input into parts by newline to preserve paragraph breaks
+    var paragraphs = str.split(/\n/);
 
-    // Split the input into sentences considering punctuation followed by spaces or line breaks
-    var sentences = uniformStr.toLowerCase().split(/(?<=[.?!])\s+/);
+    // Process each paragraph individually
+    paragraphs = paragraphs.map(paragraph => {
+        // Split the paragraph into sentences considering punctuation
+        // This regex now accounts for punctuation followed by an optional space for the next sentence
+        var sentences = paragraph.toLowerCase().split(/(?<=[.?!])\s*/);
 
-    for (var i = 0; i < sentences.length; i++) {
         // Capitalize the first letter of each sentence
-        sentences[i] = sentences[i].charAt(0).toUpperCase() + sentences[i].slice(1);
-    }
+        sentences = sentences.map(sentence => {
+            return sentence.charAt(0).toUpperCase() + sentence.slice(1);
+        });
 
-    // Join the sentences back together. Spaces are already correctly placed since we split with \s+
-    var correctedText = sentences.join(' ');
+        // Join the sentences back to form the processed paragraph, ensuring spaces after punctuation
+        return sentences.join(' ');
+    });
+
+    // Join the paragraphs back together with newline characters to preserve original paragraph breaks
+    var correctedText = paragraphs.join('\n');
 
     // Special handling to ensure ' I ' is capitalized throughout the text
-    // The global flag ensures all instances are replaced, not just the first
     correctedText = correctedText.replace(/\bi\b/g, 'I');
-
-    // To ensure that paragraph breaks (multiple line breaks) are preserved, consider adding them back if necessary
-    // This step might be adjusted based on how you want to handle paragraph breaks specifically
 
     return correctedText;
 }
