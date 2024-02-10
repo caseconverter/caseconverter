@@ -71,17 +71,19 @@ function convertstring(textarea, action){
 }
 
 function sentenceCase(str) {
-    // Split the input into sentences using a regex that matches sentence endings
-    var sentences = str.toLowerCase().split(/(\.|\?|!)\s/);
+    // Split the input into sentences more effectively, keeping the punctuation with the sentence
+    var sentences = str.toLowerCase().split(/(?<=[.?!])\s/);
     for (var i = 0; i < sentences.length; i++) {
-        // Check if the piece is an ending punctuation with a space, if not, capitalize the first letter
-        if (!sentences[i].match(/(\.|\?|!)$/)) {
-            sentences[i] = sentences[i].charAt(0).toUpperCase() + sentences[i].slice(1);
-        }
+        // Capitalize the first letter of each sentence
+        sentences[i] = sentences[i].charAt(0).toUpperCase() + sentences[i].slice(1);
     }
-    // Special handling to ensure ' I ' is capitalized, considering it might not be at the start after split
-    var correctedSentences = sentences.join('').replace(/\si\s/g, ' I ');
-    return correctedSentences.charAt(0).toUpperCase() + correctedSentences.slice(1); // Ensure the very first letter is capitalized
+    // Join the sentences back together. No need to add a space manually as we split by space after punctuation
+    var correctedText = sentences.join(' ');
+
+    // Special handling to ensure ' I ' is capitalized throughout the text
+    correctedText = correctedText.replace(/\si\s/g, ' I ');
+
+    return correctedText;
 }
 
 //reference: https://github.com/gouch/to-title-case
