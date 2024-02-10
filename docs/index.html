@@ -23,7 +23,7 @@ gtag('config', 'G-E4RJLYJW87');
 <div id="contentwrapper">
 <div id="middlecolumn">
 
-<h1>Case Converter</h1>
+<a href="https://caseconverter.cc/"><h1>Case Converter</h1></a>
 
 <h2 style="text-align:center">Your Online Tool for Lower Case, Upper Case, Title Case, Capital Case, and Sentence Case Conversion</h2>
 
@@ -70,10 +70,18 @@ function convertstring(textarea, action){
 	return false
 }
 
-function sentenceCase(str){
-	var str = str.toLowerCase().replace(/\si\s/g, ' I ');
-	str = str.charAt(0).toUpperCase() + str.slice(1);
-	return str
+function sentenceCase(str) {
+    // Split the input into sentences using a regex that matches sentence endings
+    var sentences = str.toLowerCase().split(/(\.|\?|!)\s/);
+    for (var i = 0; i < sentences.length; i++) {
+        // Check if the piece is an ending punctuation with a space, if not, capitalize the first letter
+        if (!sentences[i].match(/(\.|\?|!)$/)) {
+            sentences[i] = sentences[i].charAt(0).toUpperCase() + sentences[i].slice(1);
+        }
+    }
+    // Special handling to ensure ' I ' is capitalized, considering it might not be at the start after split
+    var correctedSentences = sentences.join('').replace(/\si\s/g, ' I ');
+    return correctedSentences.charAt(0).toUpperCase() + correctedSentences.slice(1); // Ensure the very first letter is capitalized
 }
 
 //reference: https://github.com/gouch/to-title-case
