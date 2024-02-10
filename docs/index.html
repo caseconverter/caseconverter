@@ -71,30 +71,16 @@ function convertstring(textarea, action){
 }
 
 function sentenceCase(str) {
-    // Split the input into parts by newline to preserve paragraph breaks
     var paragraphs = str.split(/\n/);
-
-    // Process each paragraph individually
     paragraphs = paragraphs.map(paragraph => {
-        // Split the paragraph into sentences considering punctuation
-        // This regex now accounts for punctuation followed by an optional space for the next sentence
         var sentences = paragraph.toLowerCase().split(/(?<=[.?!])\s*/);
-
-        // Capitalize the first letter of each sentence
         sentences = sentences.map(sentence => {
             return sentence.charAt(0).toUpperCase() + sentence.slice(1);
         });
-
-        // Join the sentences back to form the processed paragraph, ensuring spaces after punctuation
         return sentences.join(' ');
     });
-
-    // Join the paragraphs back together with newline characters to preserve original paragraph breaks
     var correctedText = paragraphs.join('\n');
-
-    // Special handling to ensure ' I ' is capitalized throughout the text
     correctedText = correctedText.replace(/\bi\b/g, 'I');
-
     return correctedText;
 }
 
