@@ -47,6 +47,6 @@ The sources of the latest production version can be found in the **/docs** folde
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/showcase/case-converter
 [facebook-shield]: https://img.shields.io/badge/-Facebook-black.svg?style=flat-square&logo=facebook&colorB=555
-[facebook-url]: https://www.facebook.com/CaseConverter
+[facebook-url]: https://www.facebook.com/caseconvertercc
 [twitter-shield]: https://img.shields.io/twitter/follow/CaseConverterCC?label=Follow&style=social
 [twitter-url]: https://twitter.com/intent/follow?screen_name=CaseConverterCC
